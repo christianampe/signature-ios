@@ -10,11 +10,21 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    private var drawingView: ACDrawing.View = {
+        let drawingView = ACDrawing.View()
+        drawingView.translatesAutoresizingMaskIntoConstraints = false
+        drawingView.backgroundColor = .white
+        return drawingView
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
+        view.addSubview(drawingView)
+        
+        drawingView.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.8).isActive = true
+        drawingView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        drawingView.heightAnchor.constraint(equalToConstant: 200).isActive = true
+        drawingView.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
     }
-
-
 }
-
