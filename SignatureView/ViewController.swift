@@ -24,7 +24,7 @@ class ViewController: UIViewController {
         
         drawingView.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.8).isActive = true
         drawingView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        drawingView.heightAnchor.constraint(equalToConstant: 200).isActive = true
+        drawingView.heightAnchor.constraint(equalTo: drawingView.widthAnchor, multiplier: 0.5).isActive = true
         drawingView.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
     }
 }

@@ -2,44 +2,31 @@ import UIKit
 
 extension ACDrawing {
     class Manager {
-        let touchManager = TouchManager()
-        let segmentManager = SegmentManager()
-        let strokeManager = StrokeManager()
-        
+        private var touches = [UITouch: ([CGPoint], UIView)]()
         weak var delegate: ACDrawingManagerDelegate?
-        
-        init() {
-            setup()
-        }
-        
-        private func setup() {
-            touchManager.delegate = self
-            segmentManager.delegate = self
-            strokeManager.delegate = self
-        }
     }
 }
 
 extension ACDrawing.Manager {
-    func update(_ touch: UITouch, _ location: CGPoint) {
-        touchManager.update(withTouch: touch, atLocation: location)
+    func manage(_ touch: UITouch, in view: UIView) {
+        let currentTouchLocation = touch.preciseLocation(in: view)
+        
+        guard let touchPointsInView = touches[touch] else {
+            touches[touch] = ([currentTouchLocation], view)
+            return
+        }
+        
+        guard let previousTouchLocation = touchPointsInView.0.last else {
+            return
+        }
+        
+        touches[touch]?.0.append(currentTouchLocation)
+        
+        let segment = ACDrawing.Segment(startLocation: previousTouchLocation,
+                                        endLocation: currentTouchLocation,
+                                        style: .init(color: .black,
+                                                     width: 3))
+        
+        delegate?.manager(self, didConstructSegment: segment)
     }
-}
-
-extension ACDrawing.Manager: ACDrawingTouchManagerDelegate {
-    func touchManager(_ touchManager: ACDrawing.TouchManager, touchUpdatedWithPoints points: [CGPoint]) {
-        print("updated", points, "\n")
-    }
-    
-    func touchManager(_ touchManager: ACDrawing.TouchManager, touchCompletedWithPoints points: [CGPoint]) {
-        print("completed", points, "\n")
-    }
-}
-
-extension ACDrawing.Manager: ACDrawingSegmentManagerDelegate {
-    
-}
-
-extension ACDrawing.Manager: ACDrawingStrokeManagerDelegate {
-    
 }

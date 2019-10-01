@@ -19,18 +19,13 @@
 		5D0C6C6A2341BF6600E6C0DC /* SignatureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D0C6C652341BF6500E6C0DC /* SignatureView.swift */; };
 		5D0C6C6B2341BF6600E6C0DC /* SignatureViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D0C6C662341BF6600E6C0DC /* SignatureViewDelegate.swift */; };
 		5D0C6C6D2341C0F700E6C0DC /* SignatureLineStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D0C6C6C2341C0F700E6C0DC /* SignatureLineStyle.swift */; };
+		5D5301F1234300F90092FA3A /* ACDrawingMath.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D5301F0234300F90092FA3A /* ACDrawingMath.swift */; };
 		5DA8B14F2342883C00EE8D92 /* ACDrawingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DA8B14E2342883C00EE8D92 /* ACDrawingView.swift */; };
 		5DA8B15123428B8400EE8D92 /* ACDrawingStroke.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DA8B15023428B8400EE8D92 /* ACDrawingStroke.swift */; };
 		5DA8B15523428E9C00EE8D92 /* ACDrawingSegment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DA8B15423428E9C00EE8D92 /* ACDrawingSegment.swift */; };
 		5DA8B15723428ECD00EE8D92 /* ACDrawingSegmentStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DA8B15623428ECD00EE8D92 /* ACDrawingSegmentStyle.swift */; };
 		5DA8B15923428FAD00EE8D92 /* ACDrawing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DA8B15823428FAD00EE8D92 /* ACDrawing.swift */; };
 		5DA8B15B234296F300EE8D92 /* ACDrawingManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DA8B15A234296F300EE8D92 /* ACDrawingManager.swift */; };
-		5DA8B15D23429A6000EE8D92 /* ACDrawingStrokeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DA8B15C23429A6000EE8D92 /* ACDrawingStrokeManager.swift */; };
-		5DA8B1612342A9FE00EE8D92 /* ACDrawingTouchManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DA8B1602342A9FE00EE8D92 /* ACDrawingTouchManager.swift */; };
-		5DA8B1652342B05100EE8D92 /* ACDrawingTouchManagerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DA8B1642342B05100EE8D92 /* ACDrawingTouchManagerDelegate.swift */; };
-		5DA8B1672342C31E00EE8D92 /* ACDrawingSegmentManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DA8B1662342C31E00EE8D92 /* ACDrawingSegmentManager.swift */; };
-		5DA8B1692342C37000EE8D92 /* ACDrawingSegmentManagerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DA8B1682342C37000EE8D92 /* ACDrawingSegmentManagerDelegate.swift */; };
-		5DA8B16B2342C3A000EE8D92 /* ACDrawingStrokeManagerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DA8B16A2342C3A000EE8D92 /* ACDrawingStrokeManagerDelegate.swift */; };
 		5DA8B16D2342C6F500EE8D92 /* ACDrawingManagerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DA8B16C2342C6F400EE8D92 /* ACDrawingManagerDelegate.swift */; };
 /* End PBXBuildFile section */
 
@@ -49,18 +44,13 @@
 		5D0C6C652341BF6500E6C0DC /* SignatureView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignatureView.swift; sourceTree = "<group>"; };
 		5D0C6C662341BF6600E6C0DC /* SignatureViewDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignatureViewDelegate.swift; sourceTree = "<group>"; };
 		5D0C6C6C2341C0F700E6C0DC /* SignatureLineStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignatureLineStyle.swift; sourceTree = "<group>"; };
+		5D5301F0234300F90092FA3A /* ACDrawingMath.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ACDrawingMath.swift; sourceTree = "<group>"; };
 		5DA8B14E2342883C00EE8D92 /* ACDrawingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ACDrawingView.swift; sourceTree = "<group>"; };
 		5DA8B15023428B8400EE8D92 /* ACDrawingStroke.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ACDrawingStroke.swift; sourceTree = "<group>"; };
 		5DA8B15423428E9C00EE8D92 /* ACDrawingSegment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ACDrawingSegment.swift; sourceTree = "<group>"; };
 		5DA8B15623428ECD00EE8D92 /* ACDrawingSegmentStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ACDrawingSegmentStyle.swift; sourceTree = "<group>"; };
 		5DA8B15823428FAD00EE8D92 /* ACDrawing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ACDrawing.swift; sourceTree = "<group>"; };
 		5DA8B15A234296F300EE8D92 /* ACDrawingManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ACDrawingManager.swift; sourceTree = "<group>"; };
-		5DA8B15C23429A6000EE8D92 /* ACDrawingStrokeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ACDrawingStrokeManager.swift; sourceTree = "<group>"; };
-		5DA8B1602342A9FE00EE8D92 /* ACDrawingTouchManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ACDrawingTouchManager.swift; sourceTree = "<group>"; };
-		5DA8B1642342B05100EE8D92 /* ACDrawingTouchManagerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ACDrawingTouchManagerDelegate.swift; sourceTree = "<group>"; };
-		5DA8B1662342C31E00EE8D92 /* ACDrawingSegmentManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ACDrawingSegmentManager.swift; sourceTree = "<group>"; };
-		5DA8B1682342C37000EE8D92 /* ACDrawingSegmentManagerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ACDrawingSegmentManagerDelegate.swift; sourceTree = "<group>"; };
-		5DA8B16A2342C3A000EE8D92 /* ACDrawingStrokeManagerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ACDrawingStrokeManagerDelegate.swift; sourceTree = "<group>"; };
 		5DA8B16C2342C6F400EE8D92 /* ACDrawingManagerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ACDrawingManagerDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -127,15 +117,10 @@
 				5DA8B14E2342883C00EE8D92 /* ACDrawingView.swift */,
 				5DA8B15A234296F300EE8D92 /* ACDrawingManager.swift */,
 				5DA8B16C2342C6F400EE8D92 /* ACDrawingManagerDelegate.swift */,
-				5DA8B1602342A9FE00EE8D92 /* ACDrawingTouchManager.swift */,
-				5DA8B1642342B05100EE8D92 /* ACDrawingTouchManagerDelegate.swift */,
 				5DA8B15423428E9C00EE8D92 /* ACDrawingSegment.swift */,
 				5DA8B15623428ECD00EE8D92 /* ACDrawingSegmentStyle.swift */,
-				5DA8B1662342C31E00EE8D92 /* ACDrawingSegmentManager.swift */,
-				5DA8B1682342C37000EE8D92 /* ACDrawingSegmentManagerDelegate.swift */,
 				5DA8B15023428B8400EE8D92 /* ACDrawingStroke.swift */,
-				5DA8B15C23429A6000EE8D92 /* ACDrawingStrokeManager.swift */,
-				5DA8B16A2342C3A000EE8D92 /* ACDrawingStrokeManagerDelegate.swift */,
+				5D5301F0234300F90092FA3A /* ACDrawingMath.swift */,
 			);
 			path = Drawing;
 			sourceTree = "<group>";
@@ -211,25 +196,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5DA8B16B2342C3A000EE8D92 /* ACDrawingStrokeManagerDelegate.swift in Sources */,
 				5DA8B15723428ECD00EE8D92 /* ACDrawingSegmentStyle.swift in Sources */,
 				5D0C6C672341BF6600E6C0DC /* Signature.swift in Sources */,
-				5DA8B1672342C31E00EE8D92 /* ACDrawingSegmentManager.swift in Sources */,
 				5DA8B15923428FAD00EE8D92 /* ACDrawing.swift in Sources */,
 				5D0C6C682341BF6600E6C0DC /* SignatureError.swift in Sources */,
 				5D0C6C6A2341BF6600E6C0DC /* SignatureView.swift in Sources */,
 				5D0C6C692341BF6600E6C0DC /* SignatureLine.swift in Sources */,
 				5DA8B15B234296F300EE8D92 /* ACDrawingManager.swift in Sources */,
 				5DA8B15523428E9C00EE8D92 /* ACDrawingSegment.swift in Sources */,
-				5DA8B1612342A9FE00EE8D92 /* ACDrawingTouchManager.swift in Sources */,
+				5D5301F1234300F90092FA3A /* ACDrawingMath.swift in Sources */,
 				5DA8B15123428B8400EE8D92 /* ACDrawingStroke.swift in Sources */,
-				5DA8B1692342C37000EE8D92 /* ACDrawingSegmentManagerDelegate.swift in Sources */,
 				5D0C6C522341BEA900E6C0DC /* ViewController.swift in Sources */,
-				5DA8B15D23429A6000EE8D92 /* ACDrawingStrokeManager.swift in Sources */,
 				5DA8B16D2342C6F500EE8D92 /* ACDrawingManagerDelegate.swift in Sources */,
 				5D0C6C4E2341BEA900E6C0DC /* AppDelegate.swift in Sources */,
 				5DA8B14F2342883C00EE8D92 /* ACDrawingView.swift in Sources */,
-				5DA8B1652342B05100EE8D92 /* ACDrawingTouchManagerDelegate.swift in Sources */,
 				5D0C6C6B2341BF6600E6C0DC /* SignatureViewDelegate.swift in Sources */,
 				5D0C6C502341BEA900E6C0DC /* SceneDelegate.swift in Sources */,
 				5D0C6C6D2341C0F700E6C0DC /* SignatureLineStyle.swift in Sources */,
