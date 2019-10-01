@@ -2,99 +2,123 @@ import UIKit
 
 extension ACDrawing {
     class View: UIView {
-        let manager = Manager()
         
-        private var layers = [CAShapeLayer]()
-        private var segments = [Segment]()
-        private var redrawnBounds = CGRect()
+        // MARK: - Properties
         
-        override init(frame: CGRect) {
-            super.init(frame: frame)
-            setup()
-        }
-        
-        required init?(coder: NSCoder) {
-            super.init(coder: coder)
-            setup()
-        }
-        
-        private func setup() {
-            manager.delegate = self
-            redrawnBounds = bounds
-        }
+        private var paths = [UITouch: [CGPoint]]()
     }
 }
+
+// MARK: - Overrides
 
 extension ACDrawing.View {
     override var bounds: CGRect {
         didSet {
-            redraw(bounds)
+            guard oldValue != bounds else {
+                return
+            }
+            
+            redraw(bounds.height / oldValue.height)
         }
+    }
+}
+
+// MARK: - Public API
+
+extension ACDrawing.View {
+    func clear() {
+        clearCache()
+        clearSublayers()
     }
 }
 
 // MARK: - Touch Override Methods
 
 extension ACDrawing.View {
-    override open func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        touches.forEach { manager.manage($0, in: self) }
-    }
-    
     override open func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
-        touches.forEach { manager.manage($0, in: self) }
-    }
-    
-    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
-        touches.forEach { manager.manage($0, in: self) }
+        touches.forEach { manage($0) }
     }
 }
 
-// MARK: - ACDrawingTouchManagerDelegate
-
-extension ACDrawing.View: ACDrawingManagerDelegate {
-    func manager(_ manager: ACDrawing.Manager, didConstructSegment segment: ACDrawing.Segment) {
-        draw(segment)
-    }
-}
+// MARK: - Manager Methods
 
 private extension ACDrawing.View {
-    func draw(_ segment: ACDrawing.Segment) {
+    func manage(_ touch: UITouch) {
+        draw(touch)
+        store(touch)
+    }
+    
+    func draw(_ touch: UITouch) {
+        let startLocation = touch.precisePreviousLocation(in: self)
+        let currentLocation = touch.preciseLocation(in: self)
         
+        draw(from: startLocation, to: currentLocation)
+    }
+    
+    func store(_ touch: UITouch) {
+        let currentLocation = touch.preciseLocation(in: self)
+        
+        if paths[touch] == nil {
+            let startLocation = touch.precisePreviousLocation(in: self)
+            
+            paths[touch] = [startLocation, currentLocation]
+        } else {
+            paths[touch]?.append(currentLocation)
+        }
+    }
+}
+
+// MARK: - Drawing Methods
+
+private extension ACDrawing.View {
+    func draw(from startLocation: CGPoint, to currentLocation: CGPoint) {
         let path = UIBezierPath()
-        path.move(to: segment.startLocation)
-        path.addLine(to: segment.endLocation)
+        path.move(to: startLocation)
+        path.addLine(to: currentLocation)
 
         let shapeLayer = CAShapeLayer()
         shapeLayer.path = path.cgPath
-        shapeLayer.strokeColor = segment.style.color.cgColor
-        shapeLayer.lineWidth = segment.style.width
+        shapeLayer.strokeColor = UIColor.black.cgColor
+        shapeLayer.lineWidth = 3
 
         layer.addSublayer(shapeLayer)
-        
-        layers.append(shapeLayer)
-        segments.append(segment)
     }
     
-    func redraw(_ bounds: CGRect) {
-        guard bounds != redrawnBounds else {
-            return
+    func redraw(_ heightScaleFactor: CGFloat) {
+        clearSublayers()
+        
+        paths.forEach { (touch, locations) in
+            let scaledLocations: [CGPoint] = locations.map { .init(x: $0.x * heightScaleFactor, y: $0.y * heightScaleFactor) }
+            
+            var startLocation: CGPoint!
+            var currentLocation: CGPoint!
+            
+            for (index, location) in scaledLocations.enumerated() {
+                guard index != 0 else {
+                    startLocation = location
+                    continue
+                }
+                
+                currentLocation = location
+                
+                draw(from: startLocation, to: currentLocation)
+                
+                startLocation = currentLocation
+            }
+            
+            paths[touch] = scaledLocations
         }
-        
-        clear()
-        
-        let heightScale = bounds.height / redrawnBounds.height
-        
-        segments = segments.map { ACDrawing.Segment(startLocation: $0.startLocation.applying(.init(scaleX: heightScale, y: heightScale)),
-                                                    endLocation: $0.endLocation.applying(.init(scaleX: heightScale, y: heightScale)),
-                                                    style: $0.style) }
-        
-        segments.forEach { draw($0) }
-        
-        redrawnBounds = bounds
+    }
+}
+
+// MARK: - Helper Methods
+
+private extension ACDrawing.View {
+    func clearSublayers() {
+        layer.sublayers?.removeAll()
     }
     
-    func clear() {
-        layers.forEach { $0.removeFromSuperlayer() }
-        layers = []
+    func clearCache() {
+        paths = [:]
     }
 }
