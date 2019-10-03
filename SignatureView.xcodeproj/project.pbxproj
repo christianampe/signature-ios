@@ -7,27 +7,27 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		5D0C6C4E2341BEA900E6C0DC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D0C6C4D2341BEA900E6C0DC /* AppDelegate.swift */; };
-		5D0C6C502341BEA900E6C0DC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D0C6C4F2341BEA900E6C0DC /* SceneDelegate.swift */; };
 		5D0C6C522341BEA900E6C0DC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D0C6C512341BEA900E6C0DC /* ViewController.swift */; };
 		5D0C6C552341BEA900E6C0DC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5D0C6C532341BEA900E6C0DC /* Main.storyboard */; };
 		5D0C6C572341BEAC00E6C0DC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5D0C6C562341BEAC00E6C0DC /* Assets.xcassets */; };
 		5D0C6C5A2341BEAC00E6C0DC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5D0C6C582341BEAC00E6C0DC /* LaunchScreen.storyboard */; };
 		5D5301F1234300F90092FA3A /* ACDrawingMath.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D5301F0234300F90092FA3A /* ACDrawingMath.swift */; };
+		5D820079234661DC005A2808 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D820077234661DC005A2808 /* AppDelegate.swift */; };
+		5D82007A234661DC005A2808 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D820078234661DC005A2808 /* SceneDelegate.swift */; };
 		5DA8B14F2342883C00EE8D92 /* ACDrawingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DA8B14E2342883C00EE8D92 /* ACDrawingView.swift */; };
 		5DA8B15923428FAD00EE8D92 /* ACDrawing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DA8B15823428FAD00EE8D92 /* ACDrawing.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		5D0C6C4A2341BEA900E6C0DC /* SignatureView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SignatureView.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		5D0C6C4D2341BEA900E6C0DC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		5D0C6C4F2341BEA900E6C0DC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		5D0C6C512341BEA900E6C0DC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		5D0C6C542341BEA900E6C0DC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		5D0C6C562341BEAC00E6C0DC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5D0C6C592341BEAC00E6C0DC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5D0C6C5B2341BEAC00E6C0DC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5D5301F0234300F90092FA3A /* ACDrawingMath.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ACDrawingMath.swift; sourceTree = "<group>"; };
+		5D820077234661DC005A2808 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = "../../../../../Porsche Digital/Development/Repositories/ACSegment/Example/AppDelegate.swift"; sourceTree = "<group>"; };
+		5D820078234661DC005A2808 /* SceneDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SceneDelegate.swift; path = "../../../../../Porsche Digital/Development/Repositories/ACSegment/Example/SceneDelegate.swift"; sourceTree = "<group>"; };
 		5DA8B14E2342883C00EE8D92 /* ACDrawingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ACDrawingView.swift; sourceTree = "<group>"; };
 		5DA8B15823428FAD00EE8D92 /* ACDrawing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ACDrawing.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -63,9 +63,9 @@
 			isa = PBXGroup;
 			children = (
 				5DA8B14D2342882F00EE8D92 /* Drawing */,
-				5D0C6C4D2341BEA900E6C0DC /* AppDelegate.swift */,
-				5D0C6C4F2341BEA900E6C0DC /* SceneDelegate.swift */,
 				5D0C6C512341BEA900E6C0DC /* ViewController.swift */,
+				5D820077234661DC005A2808 /* AppDelegate.swift */,
+				5D820078234661DC005A2808 /* SceneDelegate.swift */,
 				5D0C6C532341BEA900E6C0DC /* Main.storyboard */,
 				5D0C6C562341BEAC00E6C0DC /* Assets.xcassets */,
 				5D0C6C582341BEAC00E6C0DC /* LaunchScreen.storyboard */,
@@ -158,9 +158,9 @@
 				5DA8B15923428FAD00EE8D92 /* ACDrawing.swift in Sources */,
 				5D5301F1234300F90092FA3A /* ACDrawingMath.swift in Sources */,
 				5D0C6C522341BEA900E6C0DC /* ViewController.swift in Sources */,
-				5D0C6C4E2341BEA900E6C0DC /* AppDelegate.swift in Sources */,
+				5D820079234661DC005A2808 /* AppDelegate.swift in Sources */,
 				5DA8B14F2342883C00EE8D92 /* ACDrawingView.swift in Sources */,
-				5D0C6C502341BEA900E6C0DC /* SceneDelegate.swift in Sources */,
+				5D82007A234661DC005A2808 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
